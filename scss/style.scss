@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100;200;300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  font-family: 'Grenze Gotisch', cursive;
+  background-color: rgb(69, 69, 69);
+  color: white;
+
+}
+
+h1 {
+  margin: 30px;
+  font-size: 3em;
+}
+
+.container {
+  display: flex;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 0 20px;
+}
+
+button {
+  width: 250px;
+  height: 75px;
+  background: none;
+  color: white;
+  border: 3px solid white;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  font-family: 'Grenze Gotisch', cursive;
+
+  &:hover {
+    letter-spacing: 3px;
+  }
+
+  &::after,
+  &::before {
+    backface-visibility: hidden;
+    border: 1px solid rgba(#fff, 0);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+  }
+
+  &:hover::after,
+  &:hover::before {
+    backface-visibility: hidden;
+    border-color: #fff;
+    transition: width 350ms ease-in-out;
+    width: 70%;
+  }
+
+  &:hover::before {
+    bottom: auto;
+    top: 0;
+    width: 70%;
+  }
+}
+
+
+.selected {
+  color: rgb(212, 0, 0);
+  font-family: 'Grenze Gotisch', cursive;
+}
+
+.tab {
+  padding: 10px 20px;
+  transform: translateY(20px);
+  opacity: 0;
+
+  p {
+    font-size: 1.3em;
+    text-align: justify;
+  }
+
+  img {
+    width: 70%;
+    height: 500px;
+    object-fit: cover;
+    float: left;
+    margin: 0 25px 0 0;
+    filter: grayscale(100%);
+  }
+}
+
+.tabAnimation {
+  opacity: 1;
+  transform: translateX(0);
+  transition: 0.3s;
+}
